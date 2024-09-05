@@ -5,7 +5,7 @@ class HelloUser(cmd.Cmd):
     def do_greet(self, person):
         """Greet a named user"""
         if person:
-            print("Hello,", person)
+            print(f"Hello {person}")
         else:
             print("Hello everyone!!!")
     
