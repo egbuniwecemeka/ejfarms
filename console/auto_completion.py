@@ -9,7 +9,7 @@ class HelloOfficers(cmd.Cmd):
         if staff and staff in self.officers:
             officer = "Hello {staff}"
         elif staff:
-            officer = "Hello ", + staff
+            officer = "Hello, " + staff
         else:
             officer = "Hello everyone"
         print(officer)
