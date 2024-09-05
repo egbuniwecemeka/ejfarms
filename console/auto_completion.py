@@ -7,7 +7,7 @@ class HelloOfficers(cmd.Cmd):
     def do_greeting(self, staff):
         """Greet Staff"""
         if staff and staff in self.officers:
-            officer = "Hello {staff}"
+            officer = f"Hello {staff}"
         elif staff:
             officer = "Hello, " + staff
         else:
