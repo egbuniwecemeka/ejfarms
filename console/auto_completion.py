@@ -14,13 +14,12 @@ class HelloOfficers(cmd.Cmd):
             officer = "Hello everyone"
         print(officer)
     
-    def complete_greet(self, line, text, begidx, endidx):
+    def complete_greeting(self, line, text, begidx, endidx):
         if not text:
             completed = self.officers[:]
         else:
             completed = [name for name in self.officers if name.startswith(text)]
         return completed
-    
     
     def do_EOF(self):
         return True
