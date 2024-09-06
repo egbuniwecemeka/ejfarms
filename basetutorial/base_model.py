@@ -8,5 +8,7 @@ class BaseModel:
         
 
 if __name__ == "__main__":
-    model = BaseModel()
-    print(model.id)
+    model1 = BaseModel()
+    model2 = BaseModel()
+    print(model1.id)
+    print(model2.id)
