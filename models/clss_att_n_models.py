@@ -10,6 +10,7 @@ class Car:
     @classmethod
     def modify_wheels(cls, new_wheels):
         cls.wheels = new_wheels
+        return cls.wheels
 
 wheels_no = Car.modify_wheels(6)
 print(wheels_no)
