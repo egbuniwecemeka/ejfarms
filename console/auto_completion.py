@@ -21,7 +21,7 @@ class HelloOfficers(cmd.Cmd):
             completed = [name for name in self.officers if name.startswith(text)]
         return completed
     
-    def do_EOF(self):
+    def do_EOF(self, line):
         return True
     
 
