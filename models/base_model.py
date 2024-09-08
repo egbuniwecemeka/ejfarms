@@ -21,14 +21,7 @@ class BaseModel:
 if __name__ == "__main__":
 
     model = BaseModel()
-    model1 = BaseModel()
 
     print(model)
-    print(model.id)
-    print(model.created_at)
-    print(model.updated_at)
 
-    model.save()
-
-    print(model.updated_at)
     
