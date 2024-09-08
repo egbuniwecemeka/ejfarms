@@ -26,3 +26,8 @@ if __name__ == "__main__":
     print(model.id)
     print(model.created_at)
     print(model.updated_at)
+
+    model.save()
+
+    print(f"\n{model}")
+    print(model.updated_at)
