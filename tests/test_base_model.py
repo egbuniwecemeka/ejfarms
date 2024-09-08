@@ -1,5 +1,6 @@
 import unittest
 import uuid
+import datetime
 from models.base_model import BaseModel
 
 class TestBaseModel(unittest.TestCase):
@@ -25,6 +26,18 @@ class TestBaseModel(unittest.TestCase):
         except ValueError:
             self.fail("The UUID is not valid!")
     
+    def test_created_at_is_instance(self):
+        """Assert created_at is instance of datetime"""
+        model = BaseModel()
 
-    if __name__ == "__main__":
-        unittest.main()
+        self.assertIsInstance(model.created_at, datetime.datetime)
+
+    def test_updated_at_is_instance(self):
+        """Assert updated_at is instance of datetime"""
+        model = BaseModel()
+
+        self.assertIsInstance(model.updated_at)
+
+
+if __name__ == "__main__":
+    unittest.main()
