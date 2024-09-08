@@ -23,3 +23,4 @@ if __name__ == "__main__":
     model = BaseModel()
 
     print(model)
+    print(model.id)
