@@ -30,4 +30,3 @@ if __name__ == "__main__":
     model.save()
 
     print(f"\n{model}")
-    print(model.updated_at)
