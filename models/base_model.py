@@ -47,7 +47,6 @@ if __name__ == "__main__":
     print(model.updated_at)
 
     model.save()
-
     print(f"\n{model}")
     print(model.created_at)
     print(model.updated_at)
