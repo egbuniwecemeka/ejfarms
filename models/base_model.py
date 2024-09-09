@@ -22,6 +22,7 @@ class BaseModel:
          obj_instance_attr_set = self.__dict__
          obj_instance_attr_set['__class__'] = self.__class__.__name__
          return obj_instance_attr_set
+    
 
 
 if __name__ == "__main__":
