@@ -40,9 +40,9 @@ class TestBaseModel(unittest.TestCase):
 
     def test_updated_at_equals_created_at(self):
         """Assert updated_at equals created_at"""
-        model_create = BaseModel()
+        model = BaseModel()
 
-        self.assertEqual(model_update, model_create)
+        self.assertEqual(model.updated_at, model.created_at)
 
 if __name__ == "__main__":
     unittest.main()
