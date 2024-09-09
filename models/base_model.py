@@ -19,11 +19,11 @@ class BaseModel:
     
     def to_dict(self):
          """Returns the key, value pairs of __dict__ of the instance"""
-         obj_instance_attr_set = self.__dict__
-         obj_instance_attr_set['__class__'] = self.__class__.__name__
-         obj_instance_attr_set['created_at'] = self.created_at.isoformat()
-         obj_instance_attr_set['updated_at'] = self.updated_at.isoformat()
-         return obj_instance_attr_set
+         obj_instance_dict = self.__dict__
+         obj_instance_dict['__class__'] = self.__class__.__name__
+         obj_instance_dict['created_at'] = self.created_at.isoformat()
+         obj_instance_dict['updated_at'] = self.updated_at.isoformat()
+         return obj_instance_dict
     
 
 
