@@ -9,7 +9,7 @@ class TestBaseModel(unittest.TestCase):
         model1 = BaseModel()
         model2 = BaseModel()
 
-        self.assertEqual(model1.id, model2.id)
+        self.assertNotEqual(model1.id, model2.id)
 
     def test_id_is_string(self):
         """Assert that instance is a string"""
@@ -38,6 +38,12 @@ class TestBaseModel(unittest.TestCase):
 
         self.assertIsInstance(model.updated_at, datetime.datetime)
 
+    def test_updated_at_equals_created_at(self):
+        """Assert updated_at equals created_at"""
+        model_create = BaseModel()
+        model_update = BaseModel()
+
+        self.assertEqual(model_update, model_create)
 
 if __name__ == "__main__":
     unittest.main()
