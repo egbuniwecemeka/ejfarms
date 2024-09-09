@@ -19,7 +19,9 @@ class BaseModel:
     
     def to_dict(self):
          """Returns the key, value pairs of __dict__ of the instance"""
-         return f"{self.__dict__}"
+         obj_instance_attr_set = self.__dict__
+         obj_instance_attr_set['__class__'] = self.__class__.__name__
+         return obj_instance_attr_set
 
 
 if __name__ == "__main__":
