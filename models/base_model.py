@@ -18,6 +18,7 @@ class BaseModel:
          return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
     
     def to_dict(self):
+         """Returns the key, value pairs of __dict__ of the instance"""
          return {self.__dict__}
 
 
@@ -34,3 +35,4 @@ if __name__ == "__main__":
     print(f"\n{model}")
     print(model.created_at)
     print(model.updated_at)
+    print(f"\n{model.to_dict()}")
