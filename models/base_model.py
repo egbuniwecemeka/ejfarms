@@ -18,8 +18,8 @@ class BaseModel:
          return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
     
     def to_dict(self):
-         """Returns the key, value pairs of __dict__ of the instance"""
-         obj_instance_dict = self.__dict__
+         """Returns the key, value pairs of __dict__ of the object's instance"""
+         obj_instance_dict = self.__dict__.copy()
          obj_instance_dict['__class__'] = self.__class__.__name__
          obj_instance_dict['created_at'] = self.created_at.isoformat()
          obj_instance_dict['updated_at'] = self.updated_at.isoformat()
