@@ -4,7 +4,13 @@ import datetime
 class BaseModel:
     """A base class for all common attributes/methods for other classes"""
     def __init__(self, *args, **kwargs):
-            """Initializes public instance attributes"""
+            """Initializes public instance attributes
+
+            Args:
+                 *args: Variable length list
+                 *kwargs: keyword arguments for deserialization
+            
+            """
             if kwargs:
                  # To handle deserializtion, assign values from dictionary
                  for key,value in kwargs.items():
@@ -28,7 +34,10 @@ class BaseModel:
          return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
     
     def to_dict(self):
-         """Returns the key, value pairs of __dict__ of the object's instance"""
+         """Returns a dictionary containing all key, value pairs of __dict__ of the object's instance
+
+         class name is added to dictionary and datetime object is converted to ISO string format for serialization
+         """
          obj_instance_dict = self.__dict__.copy()
          # class name added to dictionary
          obj_instance_dict['__class__'] = self.__class__.__name__
@@ -36,18 +45,3 @@ class BaseModel:
          obj_instance_dict['created_at'] = self.created_at.isoformat()
          obj_instance_dict['updated_at'] = self.updated_at.isoformat()
          return obj_instance_dict
-
-
-if __name__ == "__main__":
-
-    model = BaseModel()
-
-    print(model)
-    print(model.created_at)
-    print(model.updated_at)
-
-    model.save()
-    print(f"\n{model}")
-    print(model.created_at)
-    print(model.updated_at)
-    print(f"\n{model.to_dict()}")
