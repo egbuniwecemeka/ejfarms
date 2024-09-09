@@ -36,7 +36,7 @@ class TestBaseModel(unittest.TestCase):
         """Assert updated_at is instance of datetime"""
         model = BaseModel()
 
-        self.assertIsInstance(model.updated_at)
+        self.assertIsInstance(model.updated_at, datetime.datetime)
 
 
 if __name__ == "__main__":
