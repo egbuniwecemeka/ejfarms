@@ -19,7 +19,7 @@ class BaseModel:
     
     def to_dict(self):
          """Returns the key, value pairs of __dict__ of the instance"""
-         return {self.__dict__}
+         return f"{self.__dict__}"
 
 
 if __name__ == "__main__":
