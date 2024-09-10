@@ -39,6 +39,6 @@ class FileStorage:
 
                         instance_val = cls(**value)
 
-                        FileStorage.__objects[key] = instance_val
+                        self.__objects[key] = instance_val
                 except Exception:
                     pass
