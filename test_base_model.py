@@ -8,7 +8,7 @@ model.my_number = 89
 model.age = 29
 
 print(model)
-
 model.save()
-
 print(f"\n{model}")
+my_model_json = model.to_dict()
+print(my_model_json)
