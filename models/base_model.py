@@ -32,7 +32,7 @@ class BaseModel:
     def save(self):
          """Updates current datetime anytime an object is changed"""
          self.updated_at = datetime.datetime.now()
-         storage.save(self)
+         storage.save()
 
     
     def __str__(self):
