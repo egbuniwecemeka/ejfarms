@@ -1,5 +1,6 @@
 import json
 import os
+from models.base_model import BaseModel
 
 class FileStorage:
     """serializes instances to a JSON file and deserializes JSON file to instances"""
@@ -27,22 +28,18 @@ class FileStorage:
         
     def reload(self):
         """deserializes JSON file to __objects"""
-        if not os.path.isfile(self.__file_path):
-            return
-
-        try:
+        if os.path.isfile(self.__file_path):
             with open(self.__file_path, 'r') as file:
-                obj_dict = json.load(file)
+                try:
+                    obj_dict = json.load(file)
 
-            for key, value in obj_dict.items():
-                class_name, id_ = key.split('.')
-                # get class name dynamically from class_name
-                cls = globals().get(class_name)
-                if cls:
-                    self.__objects[key] = cls(**value)
-                else:
-                    print(f"Warning: Class {class_name} does not exist")
-        except json.JSONDecodeError as e:
-            print(f"Error decoding json file: {e}")
-        except Exception as e:
-            print(f"Unexpected error: {e}")
+                    for key, value in obj_dict.items():
+                        class_name, obj_id = key.split('.')
+                        # get class name dynamically from class_name
+                        cls = eval(class_name)
+
+                        instance_val = cls(**value)
+
+                        FileStorage.__objects[key] = instance_val
+                except Exception:
+                    pass
