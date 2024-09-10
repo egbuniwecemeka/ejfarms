@@ -11,4 +11,4 @@ print(model)
 
 model.save()
 
-print(model)
+print(f"\n{model}")
