@@ -1,5 +1,6 @@
 import uuid
 import datetime
+from models import storage
 
 class BaseModel:
     """A base class for all common attributes/methods for other classes"""
@@ -25,9 +26,14 @@ class BaseModel:
                self.created_at = datetime.datetime.now()
                self.updated_at = self.created_at
 
+               # Add this new instance to storage
+               storage.new(self)
+
     def save(self):
          """Updates current datetime anytime an object is changed"""
          self.updated_at = datetime.datetime.now()
+         storage.save(self)
+
     
     def __str__(self):
          """Returns a string representation of BaseModel instance"""
