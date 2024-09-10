@@ -8,3 +8,7 @@ model.my_number = 89
 model.age = 29
 
 print(model)
+
+model.save()
+
+print(model)
