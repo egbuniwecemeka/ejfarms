@@ -16,7 +16,7 @@ class FileStorage:
         if obj is not None:
             key = f"{self.__class__.__name__}.{obj.id}"
             self.__objects[key] = obj
-    
+
     def save(self):
         """serializes __objects to the JSON file at __file_path"""
         obj_dict = {}
