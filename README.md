@@ -76,7 +76,10 @@ This application can be used via a console (terminal) or a web application.
 There are no present contributor or collaborator on this project
 
 ## Related projects
+
 Nil
 
 ## Licensing
+
 ![Screenshot](<Screenshot(182).png>)
+Copyright of Egbuniwe Chukwuemeka Emmanuel
