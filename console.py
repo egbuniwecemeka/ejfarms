@@ -65,7 +65,39 @@ class HBNBCommand(cmd.Cmd):
             # print the string representation of the instance
             print(all_objects[key])
 
+    def do_destroy(self, arg):
+        """ Deletes an instance based on the class name and is
+        Usage: destroy <class_name> <class_id>
+        """
+        args = shlex.split(arg)
+        
+        if len(args) == 0:
+            print("** class name missing **")
+            return
 
+        class_name = args[0]
+
+        try:
+            eval(class_name)
+        except NameError:
+            print("** class doesn't exist **")
+            return
+        
+        if len(args) < 2:
+            print("** instance id missing **")
+            return
+        
+        class_id = args[1]
+        key = f"{class_name}.{class_id}"
+        all_objects = storage.all()
+
+        # Checks if instance exists then deletes it
+        if key not in all_objects:
+            print("** no instance found **")
+            return
+        else:
+            del all_objects[key]
+            storage.save()
 
     def do_help(self, line):
         """ List all interpreter commands"""
