@@ -2,19 +2,19 @@ html, body{
     margin: 0;
     padding: 0;
     height: 100%; /* This helps in view port calculations */
-    color: #484848;
+    color: #000000;
+    background-color: rgb(224, 217, 217);
     font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 .header{
-    background-color: #FF0000;
+    background-color: rgb(207, 238, 162);
     height: 70px;
     width: 100%;
     border-bottom: 1px #CCCCCC;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border: 2px solid;
 /*  position: fixed;
     top: 0; */
 }
@@ -29,7 +29,6 @@ nav{
     justify-content: space-around;
     align-items: center;
     /* padding: 0 20px; */
-    border: 2px solid purple;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -130,6 +129,12 @@ ul li{
 .sections{
     display: flex;
     flex-wrap: wrap;
+    gap: 30px;
+}
+
+.places{
+    height: 200px;
+    border-radius: 4px;
 }
 
 .places > h1{
@@ -142,17 +147,31 @@ ul li{
     width: 390px;
     padding: 20px;
     margin: 20px;
-    border: 1px solid #FF5A5F;
     border-radius: 4px;
 }
 
-.places > article > h2{
-    font-size: 30px;
-    text-align: center;
+.sections section:nth-child(1){
+    background-image: url('images/hatch.jpeg');
+    background-size: cover;
+}
+
+.sections section:nth-child(2){
+    background-image: url('images/pickup.jpeg');
+    background-size: auto;
+}
+
+.sections section:nth-child(3){
+    background-image: url('images/turkey.jpeg');
+    background-size: cover;
+}
+
+.sections section:nth-child(4){
+    background-image: url('images/sales.jpeg');
+    background-size: cover;
 }
 
 .footer{
-    background-color: #00FF00;
+    background-color: rgb(207, 238, 162);
     height: 70px;
     width: 100%;
     display: flex;
