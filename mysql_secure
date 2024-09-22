@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+# Create and Secure MySQL environment
+
+sudo mysql_secure_installation
