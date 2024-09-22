@@ -1,4 +1,9 @@
 #!/usr/bin/bash
 # Create and Secure MySQL environment
+# The below script sets and validates a password
+# Removes anonymous users
+# Disallow root login remotely
+# Removes test database
+# Reload privilege tables (changes takes immediate effect)
 
 sudo mysql_secure_installation
