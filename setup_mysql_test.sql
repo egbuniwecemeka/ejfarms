@@ -9,6 +9,6 @@ CREATE USER IF NOT EXISTS 'ej_test'@'localhost' IDENTIFIED BY '$Fake_dev_passwor
 -- 'WITH GRANRT OPTION' allows user to grant any inherited permission to other users
 GRANT ALL PRIVILEGES ON ejfarms_test_db.* TO 'ej_test'@'localhost';
 -- Grant SELECT privileges on performance_schema to hbnb_user
-GRANT SELECT ON performance_schema.* TO 'ej_tes'@'localhost';
+GRANT SELECT ON performance_schema.* TO 'ej_test'@'localhost';
 -- Apply changes
 FLUSH PRIVILEGES;
