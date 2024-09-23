@@ -1,0 +1,34 @@
+#!/usr/bin/bash
+# Create and Secure MySQL environment
+
+# MySQL Installation
+# Update dependencies
+sudo apt-get update
+
+# Install MySQL
+sudo apt install -y mysql-server
+
+# Ensure server is running
+sudo systemctl start mysql.service || sudo service mysql start
+
+# Configuring MySQL
+
+# Note: mysql_secure_installation fix
+# Login to MySQL
+sudo mysql
+
+# Alter user and set required password
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY $1;
+FLUSH PRIVILEGES;
+exit;
+
+# Script can be run without issues
+sudo mysql_secure_installation
+
+# After running the script and automating required responses
+
+# Change authentication method back to the default
+sudo mysql -uroot -p
+
+# Restore default authentication method
+ALTER USER 'root'@'localhost' IDENTIFIED WITH auth_socket;
