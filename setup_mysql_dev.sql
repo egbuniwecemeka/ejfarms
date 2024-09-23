@@ -4,7 +4,7 @@
 CREATE DATABASE IF NOT EXISTS `ejfarms_dev_db`;
 USE `ejfarms_dev_db`;
 -- Create the user if it doesn't exist and set it's password
-CREATE USER IF NOT EXISTS 'ej_dev'@'localhost' IDENTIFIED BY '$fake_dev_password';
+CREATE USER IF NOT EXISTS 'ej_dev'@'localhost' IDENTIFIED BY '$Fake_dev_password';
 -- Grant all privileges on hbnb_dev_db to hbnb_dev
 -- 'WITH GRANRT OPTION' allows user to grant any inherited permission to other users
 GRANT ALL PRIVILEGES ON 'ejfarms_dev_db'.* TO 'ej_dev'@'localhost' WITH GRANT OPTION;
