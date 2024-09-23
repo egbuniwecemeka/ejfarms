@@ -13,22 +13,18 @@ sudo systemctl start mysql.service || sudo service mysql start
 
 # Configuring MySQL
 
-# Note: mysql_secure_installation fix
-# Login to MySQL
-sudo mysql
+# Note: Secure installation fix and set root password
+# Ensure a password is passed to the script
+if [ -z "$1" ]; then
+  echo "Please provide root password as the first argument"
+  exit 1
+fi
 
-# Alter user and set required password
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY $1;
-FLUSH PRIVILEGES;
-exit;
+# Login to MySQL and set password non-interactively
+sudo mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '$1'; FLUSH PRIVILEGES;"
 
-# Script can be run without issues
+# Run mysql_secure_installation to secure the installation
 sudo mysql_secure_installation
 
-# After running the script and automating required responses
-
-# Change authentication method back to the default
-sudo mysql -uroot -p
-
-# Restore default authentication method
-ALTER USER 'root'@'localhost' IDENTIFIED WITH auth_socket;
+# Restore default authentication method to auth_socket
+sudo mysql -uroot -p"$1" -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH auth_socket; FLUSH PRIVILEGES;"
