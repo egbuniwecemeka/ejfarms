@@ -1,13 +1,14 @@
 -- MySQL script that pepares my projects server
 -- Creates a database, then a user and grants necessary permissions
 
-CREATE DATABASE IF NOT EXISTS `hbnb_dev_db`;
-USE `hbnb_dev_db`;
+CREATE DATABASE IF NOT EXISTS `ejfarms_dev_db`;
+USE `ejfarms_dev_db`;
 -- Create the user if it doesn't exist and set it's password
-CREATE USER IF NOT EXISTS 'hbnb_dev'@'localhost' IDENTIFIED BY 'hbnb_dev_pwd';
+CREATE USER IF NOT EXISTS 'ej_dev'@'localhost' IDENTIFIED BY '$fake_dev_password';
 -- Grant all privileges on hbnb_dev_db to hbnb_dev
-GRANT ALL PRIVILEGES ON 'hbnb_dev_db'.* TO 'hbnb_dev'@'localhost';
+-- 'WITH GRANRT OPTION' allows user to grant any inherited permission to other users
+GRANT ALL PRIVILEGES ON 'ejfarms_dev_db'.* TO 'ej_dev'@'localhost' WITH GRANT OPTION;
 -- Grant SELECT privileges on performance_schema to hbnb_user
-GRANT SELECT ON 'performance_schema'.* TO 'hbnb_dev'@'localhost';
+GRANT SELECT ON 'performance_schema'.* TO 'ej_dev'@'localhost';
 -- Apply changes
 FLUSH PRIVILEGES;
