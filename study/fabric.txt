@@ -1,0 +1,10 @@
+How To Use Fabric To Automate Administration Tasks And Deployments
+
+Secured (SSH) & Single Automation tool (Fabric)
+
+What is Fabric?
+A python library for interacting with SSH and computer system 
+
+Installation
+sudo aptitude install Fabric
+pip install fabric
