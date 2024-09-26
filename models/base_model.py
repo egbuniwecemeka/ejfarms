@@ -39,7 +39,7 @@ class BaseModel:
          """Returns a string representation of BaseModel instance"""
          return (f"[{self.__class__.__name__}] ({self.id}) "
                  f"{{'my_number': {self.my_number}, 'name': {self.name}, "
-                 f"'updated_at': {self.updated_at}, 'id': '{self.id}', 'created_at': {self.created_at}}}"
+                 f"'updated_at': {repr(self.updated_at)}, 'id': '{self.id}', 'created_at': {repr(self.created_at)}}}"
           )
     
     def to_dict(self):
