@@ -37,7 +37,10 @@ class BaseModel:
     
     def __str__(self):
          """Returns a string representation of BaseModel instance"""
-         return f"[{self.__class__.__name__}] ({self.id}) {{'my_number': {self.my_number}, 'name': {self.name}, 'updated_at': {self.updated_at}, 'id': '{self.id}', 'created_at': {self.created_at}}}"
+         return (f"[{self.__class__.__name__}] ({self.id}) "
+                 f"{{'my_number': {self.my_number}, 'name': {self.name}, "
+                 f"'updated_at': {self.updated_at}, 'id': '{self.id}', 'created_at': {self.created_at}}}"
+          )
     
     def to_dict(self):
          """Returns a dictionary containing all key, value pairs of __dict__ of the object's instance
