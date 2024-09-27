@@ -47,14 +47,4 @@ class BaseModel:
 
          class name is added to dictionary and datetime object is converted to ISO string format for serialization
          """
-         obj_instance_dict = self.__dict__.copy()
-         # class name added to dictionary
-         obj_instance_dict['__class__'] = self.__class__.__name__
-         # Cdatetime objects are converted to ISO strings
-         obj_instance_dict['created_at'] = self.created_at.isoformat()
-         obj_instance_dict['updated_at'] = self.updated_at.isoformat()
-         # Ensure 'name' and 'my_number' are present in the dictionary
-         obj_instance_dict['name'] = getattr(self, 'name', '')
-         obj_instance_dict['my_number'] = getattr(self, 'my_number', 0)
-         
-         return obj_instance_dict
+         return f"my_number: {getattr(self, 'my_number', 0)}, "
