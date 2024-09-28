@@ -47,9 +47,9 @@ class BaseModel:
 
          class name is added to dictionary and datetime object is converted to ISO string format for serialization
          """
-         return (f"'my_number': {getattr(self, 'my_number', 0)}, "
+         return {f"'my_number': {getattr(self, 'my_number', 0)}, "
                  f"'name': {getattr(self, 'name', '')}, "
                  f"'__class__': '{self.__class__.__name__}', "
                  f"'updated_at': '{self.updated_at}', "
                  f"'id': '{self.id}', "
-                 f"'created_at': '{self.created_at}'")
+                 f"'created_at': '{self.created_at}'"}
