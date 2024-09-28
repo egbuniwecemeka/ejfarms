@@ -50,7 +50,7 @@ class BaseModel:
          return {'my_number': {getattr(self, 'my_number', 0)},
                  'name': {getattr(self, 'name', '')},
                  '__class__': {self.__class__.__name__},
-                 'updated_at': {self.updated_at},
+                 'updated_at': {self.updated_at.isoformat()},
                  'id': {self.id},
-                 'created_at': {self.created_at}
+                 'created_at': {self.created_at.isoformat()}
                  }
